@@ -119,7 +119,7 @@ function SigninPage(){
     //            setTimeout(function () {
     //                var time = "2 minutes ago";
     //                $.notify({
-    //                    icon: 'https://bullrun.live/Content/assets/img/b1.png',
+    //                    icon: '',
     //                    title: "User " + event.args._referral,
     //                    message: "Received " + event.args._level.c[1] == 1 ? level1 : event.args._level.c[1] == 2 ? level2 : event.args._level.c[1] == 3 ? level3 : level4 + " referral income from " + event.args._user
     //                }, {
@@ -185,7 +185,7 @@ function SigninPage(){
     //            setTimeout(function () {
     //                var time = "2 minutes ago";
     //                $.notify({
-    //                    icon: 'https://bullrun.live/Content/assets/img/b1.png',
+    //                    icon: '',
     //                    title: "User " + event.args._receiver,
     //                    message: "Received " + event.args._level.c[1] == 1 ? pool1_price : event.args._level.c[1] == 2 ? pool2_price : event.args._level.c[1] == 3 ? pool3_price : event.args._level.c[1] == 4 ? pool4_price : event.args._level.c[1] == 5 ? pool5_price : event.args._level.c[1] == 6 ? pool6_price : event.args._level.c[1] == 7 ? pool7_price : event.args._level.c[1] == 8 ? pool8_price : event.args._level.c[1] == 9 ? pool9_price : pool10_price + " Pool income from " + event.args._user
     //                }, {
@@ -226,7 +226,7 @@ $(document).ready(function () {
             myContractInstance.methods.users(account).call().then(function (result) {
                 if (result[0]) {
                     localStorage.setItem("address", account);
-                    location.href = "https://1dapp.github.io/Home-Dashboard";
+                    location.href = "https://bullrunv3.github.io/Home-Dashboard";
                 }
                 else {
                     $('.error').html('You need to register first');
@@ -255,7 +255,7 @@ $(document).ready(function () {
                 if (result1.status == "0x1") {
                     alert("success")
                     localStorage.setItem("address", account);
-                    location.href = "https://1dapp.github.io/Home-Dashboard";
+                    location.href = "https://bullrunv3.github.io/Home-Dashboard";
                 }
                 else {
                     $('.error').html('Transaction Failed');
@@ -309,7 +309,7 @@ $(document).ready(function () {
 
     function SignUpPay(account) {
         var add = $('[name="referral"]').val();
-        myContractInstance.methods.regUser(add).send({ from: account, value: 50000000000000000, gasprice: 30 })
+        myContractInstance.methods.regUser(add).send({ from: account, value: 50000000000000000, gasprice: 100 })
             .on('transactionHash', function (hash) {
                 $('.error').html('Pending : Transaction waiting for comfirmation');
                 $('.error').show();
@@ -325,7 +325,7 @@ $(document).ready(function () {
                     if (receipt.status) {
                         alert("success")
                         localStorage.setItem("address", account);
-                        location.href = "https://1dapp.github.io/Home-Dashboard";
+                        location.href = "https://bullrunv3.github.io/Home-Dashboard";
                     }
                     else {
                         $('.error').html('Transaction Failed');
@@ -350,7 +350,7 @@ $(document).ready(function () {
                        
 
                             localStorage.setItem("address", add);
-                            location.href = "https://1dapp.github.io/Home-Dashboard";
+                            location.href = "https://bullrunv3.github.io/Home-Dashboard";
                         }
                         else {
                             $('.error').html('You need to register first');
@@ -482,7 +482,7 @@ $(document).ready(function () {
                 </div> 
                 <div class="login100-more ">
                     <div class="col-lg-12 m-t-30">
-                        <a href="https://1dapp.github.io"> <img src="https://1dapp.github.io/signup/assets/img/bullrun3.png" style="" class="w-100" /></a>
+                        <a href="https://1dapp.github.io/signup/assets/img/bullrun3.png"> <img src="https://1dapp.github.io/signup/assets/img/bullrun3.png" style="" class="w-100" /></a>
                     </div>
                     <div class="w-100 m-t-100 m-l-auto m-r-auto text-center download-buttons">
                         <a href="https://metamask.io/" target="_blank" class="m-b-5 btn btn-success" style="background-color:#062d54;border-color:#062d54">Download Metamask</a>
